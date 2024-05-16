@@ -74,6 +74,6 @@ jobs:
             docker compose up -d
             docker exec -i app /bin/sh -c "php artisan key:generate"
             docker exec -i app /bin/sh -c "yarn"
-            docker exec -i app /bin/sh -c "yarn build"
             docker exec -i app /bin/sh -c "php artisan migrate --force"
             docker exec -i app /bin/sh -c "php artisan db:seed --force"
+            docker exec -i app /bin/sh -c "yarn build"

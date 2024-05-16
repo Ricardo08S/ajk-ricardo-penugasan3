@@ -1,17 +1,19 @@
 version: '3.7'
 services:
   app:
-    image: ricardo08/ajk-penugasan3:latest
+    # image: ricardo08/ajk-penugasan3:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: app
     restart: unless-stopped
     tty: true
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
-    working_dir: /var/www
+    working_dir: /var/www/html
     volumes:
-      - ./tamiyochi-laravel/:/var/www
-      - ./tamiyochi-laravel/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - dbdata:/var/www/html
     networks:
       - rics-net
 
@@ -24,8 +26,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./tamiyochi-laravel/:/var/www
-      - ./tamiyochi-laravel/nginx/conf.d/:/etc/nginx/conf.d/
+      - dbdata:/var/www/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - rics-net
 
@@ -43,9 +45,6 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    volumes:
-      - dbdata:/var/lib/mysql/
-      - ./tamiyochi-laravel/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - rics-net
 
