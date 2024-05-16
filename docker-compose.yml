@@ -10,8 +10,8 @@ services:
       SERVICE_TAGS: dev
     working_dir: /var/www
     volumes:
-      - ./:/var/www
-      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./tamiyochi-laravel/:/var/www
+      - ./tamiyochi-laravel/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - rics-net
 
@@ -24,8 +24,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./:/var/www
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./tamiyochi-laravel/:/var/www
+      - ./tamiyochi-laravel/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - rics-net
 
@@ -45,7 +45,7 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql/
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./tamiyochi-laravel/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - rics-net
 
