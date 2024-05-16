@@ -6,7 +6,6 @@ COPY composer.lock composer.json /var/www/html/
 
 COPY .env.example .env
 
-# Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
