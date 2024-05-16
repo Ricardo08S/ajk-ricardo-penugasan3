@@ -47,13 +47,6 @@ RUN composer install --no-dev --optimize-autoloader
 # Change current user to www
 USER www
 
-RUN php artisan key:generate \
-    && php artisan config:clear \
-    && php artisan config:cache \
-    && php artisan storage:link \
-    && yarn \
-    && yarn build
-
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
