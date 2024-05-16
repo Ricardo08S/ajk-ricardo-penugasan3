@@ -2,7 +2,6 @@ FROM php:8.1-fpm
 
 WORKDIR /var/www/html
 
-# Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/html/
 
 COPY .env.example .env
