@@ -1,10 +1,10 @@
 version: '3.7'
 services:
   app:
-    # image: ricardo08/ajk-penugasan3:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ricardo08/ajk-penugasan3:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: app
     restart: unless-stopped
     tty: true
