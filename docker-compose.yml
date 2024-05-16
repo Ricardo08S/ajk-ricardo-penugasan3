@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   app:
-    image: ${{ secrets.DOCKERHUB_USERNAME }}/laravel-app:latest
+    image: ricardo08/ajk-penugasan3:latest
     container_name: app
     restart: unless-stopped
     tty: true
