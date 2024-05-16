@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Yarn
 RUN npm install -g yarn
@@ -46,6 +46,13 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Change current user to www
 USER www
+
+RUN php artisan key:generate \
+    && php artisan config:clear \
+    && php artisan config:cache \
+    && php artisan storage:link \
+    && yarn \
+    && yarn build
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
