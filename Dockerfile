@@ -40,9 +40,6 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory contents
 COPY . /var/www/html
 
-
-RUN chmod -R 777 .
-
 RUN chown -R www-data:www-data /var/www/html
 # Change current user to www
 USER www
