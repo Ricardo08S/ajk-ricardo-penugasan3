@@ -68,13 +68,10 @@ jobs:
           script: |
             cd /home/${{ secrets.SERVER_USERNAME }}
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ajk-penugasan3:latest
-            docker-compose down
-            docker-compose up -d
-            docker exec app php artisan key:generate
-            docker exec app php artisan migrate --force
-            docker exec app php artisan db:seed --force
-            docker exec app php artisan storage:link
-            docker exec app yarn
-            docker exec app yarn dev
-        
-        
+            docker compose down
+            docker compose up -d
+            docker exec -i app /bin/sh -c "php artisan key:generate"
+            docker exec -i app /bin/sh -c "php artisan migrate --force"
+            docker exec -i app /bin/sh -c "php artisan db:seed --force"
+            docker exec -i app /bin/sh -c "yarn"
+            docker exec -i app /bin/sh -c "yarn build"
