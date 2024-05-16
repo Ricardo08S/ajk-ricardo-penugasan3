@@ -67,6 +67,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
           script: |
             cd /home/${{ secrets.SERVER_USERNAME }}
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ajk-penugasan3:latest
