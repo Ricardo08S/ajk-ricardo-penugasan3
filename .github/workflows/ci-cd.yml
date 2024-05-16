@@ -59,7 +59,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "./docker-compose.yml, ./nginx/conf.d/default.conf"
-          target: "~/${{ secrets.SERVER_USERNAME }}"
+          target: "."
           overwrite: true
 
       - name: Deploy to Azure
