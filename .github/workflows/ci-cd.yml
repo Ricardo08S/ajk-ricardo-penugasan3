@@ -58,7 +58,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./docker-compose.yml"
+          source: "./docker-compose.yml, ./nginx/conf.d/default.conf"
           target: "~/${{ secrets.SERVER_USERNAME }}"
           overwrite: true
 
