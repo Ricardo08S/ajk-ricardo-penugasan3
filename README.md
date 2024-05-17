@@ -6,7 +6,9 @@
 
 # CI/CD Deployment with GitHub Actions
 
-Repository ini berisi konfigurasi untuk mengimplementasikan proses CI/CD (Continuous Integration and Continuous Deployment) menggunakan GitHub Actions. Proses ini mencakup build dan deploy aplikasi, dengan menjaga keamanan sensitive data.
+Repository ini berisi konfigurasi untuk mengimplementasikan proses CI/CD (Continuous Integration and Continuous Deployment) menggunakan GitHub Actions. Proses ini mencakup build dan deploy aplikasi, dengan menjaga keamanan sensitive data. Deploy dapat dilihat pada link ini http://20.243.200.197 atau http://20.243.200.197/seri
+
+Link dapat diakses secara bebas hingga tanggal 19/05/2024, setelah itu vm nya akan saya stop.
 </div>
 
 ## Fitur Utama
