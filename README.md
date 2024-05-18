@@ -27,33 +27,6 @@ Untuk menjaga keamanan, kami menggunakan beberapa secret environment variables:
 - `SERVER_USERNAME`
 - `SSH_PRIVATE_KEY`
 
-## Struktur Direktori
-
-
-Berikut adalah dokumentasi dalam format markdown (README.md) yang menjelaskan pekerjaan Anda pada repository GitHub, dengan penjelasan rinci tentang setiap file dan hubungannya:
-
-markdown
-Copy code
-# CI/CD Deployment with GitHub Actions
-
-Repository ini berisi konfigurasi untuk mengimplementasikan proses CI/CD (Continuous Integration and Continuous Deployment) menggunakan GitHub Actions. Proses ini mencakup build dan deploy aplikasi, dengan menjaga keamanan sensitive data seperti key, IP, dan password.
-
-## Fitur Utama
-
-- **CI/CD Pipeline**: Menggunakan GitHub Actions untuk mengotomatisasi proses build dan deploy.
-- **Keamanan**: Tidak me-leak sensitive data dalam pipeline CI/CD.
-- **Build dan Push Docker Image**: Membuat dan mengupdate image Docker ke Docker Hub.
-- **Deploy ke Server**: Menggunakan Docker Compose untuk pull dan menjalankan container baru di server.
-
-## Secret Environment Variables
-
-Untuk menjaga keamanan, kami menggunakan beberapa secret environment variables:
-- `DOCKERHUB_PASSWORD`
-- `DOCKERHUB_USERNAME`
-- `SERVER_IP`
-- `SERVER_USERNAME`
-- `SSH_PRIVATE_KEY`
-
 ### Dockerfile
 
 Dockerfile merupakan file yang bertujuan untuk `build` image agar aplikasi dapat dijalankan sebagai container. pada Dockerfile ini isinya untuk menjalankan `front end` dan `back end` dari project yang ada.
