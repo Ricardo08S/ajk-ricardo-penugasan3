@@ -284,4 +284,4 @@ Dengan konfigurasi ini, setiap perubahan pada kode backend atau frontend akan me
 - Masih belum sempat untuk mengoptimasi build time dengan memanfaatkan cache (waktu total untuk build dan deploy sekitar 3-5 menit).
 - Menemui error saat melakukan uji coba github action di bagian langkah-langkah build dan deploy, lalu memanfaatkan dari tutorial saat zoom menggunakan appleboy dan lainnya.
 
-Sekian dari saya, terima kasih. Jika ingin mengakses tutorial untuk menjalankan repository secara manual bisa mengakses [README.md manual run](./manual-run/README.md)
+Sekian dari saya, terima kasih. Jika ingin mengakses tutorial untuk menjalankan repository secara manual bisa mengakses [README.md manual run](./manual-run/README.md).
